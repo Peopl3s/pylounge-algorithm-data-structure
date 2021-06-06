@@ -34,6 +34,13 @@
 2.Неустойчив.
 '''
 
+def tail_recursive_quick_sort(arr, start, finish):
+  while (start < finish):
+    p = partition(arr, start, finish)
+    tail_recursive_quick_sort(arr, start, p - 1)
+    start += 1
+  return arr
+
 def quick_sort(arr, start, finish):
   if finish - start > 1:
     p = partition(arr, start, finish)
